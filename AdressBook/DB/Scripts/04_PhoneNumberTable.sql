@@ -15,7 +15,7 @@ BEGIN TRY
 		DefaultNumber BIT,
 		ContactId INT);
 		
-	ALTER TABLE dbo.PhoneNumber ADD CONSTRAINT [FK_ContactId] FOREIGN KEY(ContactId)
+	ALTER TABLE dbo.PhoneNumber ADD CONSTRAINT [FK_PhoneNumberContactId] FOREIGN KEY(ContactId)
 	REFERENCES Contact (Id)
 
 	COMMIT TRANSACTION [PhoneNumberTable];
