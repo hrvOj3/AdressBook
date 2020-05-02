@@ -3,21 +3,21 @@
 namespace AdressBook.Models
 {
     [TableName(tableName: "Contacts")]
-    public partial class Contacts
+    public partial class Contact
     {
         [Column]
-        private int Id { get; set; }
+        public int Id { get; set; }
         [Column]
         public string Title { get; set; }
         [Column]
         public string Name { get; set; }
         [Column]
+        public string Surname { get; set; }
+        [Column]
+        public string Organization { get; set; }
+        [Column]
         public string Email { get; set; }
         [Column]
         public int UserId { get; set; }
-        [Column]
-        public int PhoneNumberId { get; set; }
-        [Column]
-        public int ContactGroupId { get; set; }
     }
 }

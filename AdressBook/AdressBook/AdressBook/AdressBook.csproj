@@ -129,7 +129,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ContactGroup.cs" />
-    <Compile Include="Models\Contacts.cs" />
+    <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\Extenders\ContactGroup.cs" />
     <Compile Include="Models\Extenders\Contacts.cs" />
     <Compile Include="Models\Extenders\PhoneNumber.cs" />

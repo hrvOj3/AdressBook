@@ -6,9 +6,14 @@ namespace AdressBook.Models
     {
         [Column]
         private int Id { get; set; }
+
         [Column]
         public string Name { get; set; }
+
         [Column]
         public string Description { get; set; }
+
+        [Column]
+        public int ContactId { get; set; }
     }
 }

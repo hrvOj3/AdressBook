@@ -13,5 +13,7 @@ namespace AdressBook.Models
         public int Number { get; set; }
         [Column]
         public int DefaultNumber { get; set; }
+        [Column]
+        public int ContactId { get; set; }
     }
 }
