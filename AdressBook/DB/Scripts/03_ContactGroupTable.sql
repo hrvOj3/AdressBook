@@ -12,7 +12,11 @@ BEGIN TRY
 	CREATE TABLE dbo.ContactGroup(
 		Id INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
 		Name NVARCHAR(50),
-		Description NVARCHAR(255));
+		Description NVARCHAR(255)		
+		ContactId INT);
+		
+	ALTER TABLE dbo.ContactGroup ADD CONSTRAINT [FK_ContactId] FOREIGN KEY(ContactId)
+	REFERENCES Contact (Id)
 
 	COMMIT TRANSACTION [ContactGroupTable];
 END TRY
