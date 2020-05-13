@@ -7,39 +7,45 @@ INSERT INTO [dbo].[Contact]
            ,[Name]
            ,[Surname]
            ,[Organization]
-           ,[Email])
+           ,[Email]
+		   ,[Modified_Datetime])
      VALUES
            ('Maki'
            ,'Marko'
-           ,'Maruli?'
+           ,'Marulic'
            ,''
-           ,'mmarko@gmail.com');
+           ,'mmarko@gmail.com'
+		   ,GETDATE());
 
 INSERT INTO [dbo].[Contact]
            ([Title]
            ,[Name]
            ,[Surname]
            ,[Organization]
-           ,[Email])
+           ,[Email]
+		   ,[Modified_Datetime])
      VALUES
            ('Ante'
            ,'Anto'
-           ,'Anti?'
+           ,'Antic'
            ,''
-           ,'aante@gmail.com');
+           ,'aante@gmail.com'
+		   ,GETDATE());
 
 INSERT INTO [dbo].[Contact]
            ([Title]
            ,[Name]
            ,[Surname]
            ,[Organization]
-           ,[Email])
+           ,[Email]
+		   ,[Modified_Datetime])
      VALUES
            ('Kate'
            ,'Katarina'
-           ,'Mari?'
+           ,'Maric'
            ,''
-           ,'keti13@gmail.com');
+           ,'keti13@gmail.com'
+		   ,GETDATE());
 
 
 INSERT INTO [dbo].[Contact]
@@ -47,13 +53,15 @@ INSERT INTO [dbo].[Contact]
            ,[Name]
            ,[Surname]
            ,[Organization]
-           ,[Email])
+           ,[Email]
+		   ,[Modified_Datetime])
      VALUES
            ('Mariana'
            ,'Mariana'
            ,'Mariana'
            ,'Udruga sidro'
-           ,'');
+           ,''
+		   ,GETDATE());
 
 
 INSERT INTO [dbo].[Contact]
@@ -61,13 +69,15 @@ INSERT INTO [dbo].[Contact]
            ,[Name]
            ,[Surname]
            ,[Organization]
-           ,[Email])
+           ,[Email]
+		   ,[Modified_Datetime])
      VALUES
            ('Ana'
            ,'Ana'
-           ,'Ani?'
+           ,'Anic'
            ,''
-           ,'anci123@hotmail.com');
+           ,'anci123@hotmail.com'
+		   ,GETDATE());
 
 
 INSERT INTO [dbo].[Contact]
@@ -75,13 +85,15 @@ INSERT INTO [dbo].[Contact]
            ,[Name]
            ,[Surname]
            ,[Organization]
-           ,[Email])
+           ,[Email]
+		   ,[Modified_Datetime])
      VALUES
            ('Kuma'
            ,'Ana'
-           ,'?op'
+           ,'Cop'
            ,''
-           ,'zekipeki45@hotmail.com');
+           ,'zekipeki45@hotmail.com'
+		   ,GETDATE());
 
 
 INSERT INTO [dbo].[Contact]
@@ -89,13 +101,15 @@ INSERT INTO [dbo].[Contact]
            ,[Name]
            ,[Surname]
            ,[Organization]
-           ,[Email])
+           ,[Email]
+		   ,[Modified_Datetime])
      VALUES
            ('Kum'
            ,'Andro'
-           ,'Andri?'
+           ,'Andric'
            ,'RiRock'
-           ,'')
+           ,''
+		   ,GETDATE())
 
 
 INSERT INTO [dbo].[Contact]
@@ -103,13 +117,15 @@ INSERT INTO [dbo].[Contact]
            ,[Name]
            ,[Surname]
            ,[Organization]
-           ,[Email])
+           ,[Email]
+		   ,[Modified_Datetime])
      VALUES
            ('Andro Barka'
            ,'Andro'
            ,'Andro'
-           ,'Lu?ica I?i?i'
-           ,'');
+           ,'Lucica Icici'
+           ,''
+		   ,GETDATE());
 
 
 INSERT INTO [dbo].[Contact]
@@ -117,26 +133,30 @@ INSERT INTO [dbo].[Contact]
            ,[Name]
            ,[Surname]
            ,[Organization]
-           ,[Email])
+           ,[Email]
+		   ,[Modified_Datetime])
      VALUES
            ('Boki'
            ,'Bojan'
            ,'Bojan'
            ,'Fit Bit Teretana'
-           ,'');
+           ,''
+		   ,GETDATE());
 
 INSERT INTO [dbo].[Contact]
            ([Title]
            ,[Name]
            ,[Surname]
            ,[Organization]
-           ,[Email])
+           ,[Email]
+		   ,[Modified_Datetime])
      VALUES
            ('Trener'
            ,'Tomislav'
-           ,'Tomislavi?'
+           ,'Tomislavic'
            ,'Fit Bit Teretana'
-           ,'');
+           ,''
+		   ,GETDATE());
 
 
 INSERT INTO [dbo].[Contact]
@@ -144,14 +164,30 @@ INSERT INTO [dbo].[Contact]
            ,[Name]
            ,[Surname]
            ,[Organization]
-           ,[Email])
+           ,[Email]
+		   ,[Modified_Datetime])
      VALUES
            ('Biciklista'
            ,'Erik'
            ,'Erik'
            ,''
-           ,'biciklista78@gmail.com');
+           ,'biciklista78@gmail.com'
+		   ,GETDATE());
 
+INSERT INTO [dbo].[Contact]
+           ([Title]
+           ,[Name]
+           ,[Surname]
+           ,[Organization]
+           ,[Email]
+		   ,[Modified_Datetime])
+     VALUES
+           ('Valko'
+           ,'Val'
+           ,'Valić'
+           ,''
+           ,'biciklista1@gmail.com'
+		   ,GETDATE());
 
 
 	COMMIT TRANSACTION [ContactData];

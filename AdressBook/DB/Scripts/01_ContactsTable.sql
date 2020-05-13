@@ -15,7 +15,8 @@ BEGIN TRY
 		Name NVARCHAR(50),
 		Surname NVARCHAR(50),
 		Organization NVARCHAR(50),
-		Email NVARCHAR(50));
+		Email NVARCHAR(50),
+		Modified_Datetime DATETIME);
 
 	COMMIT TRANSACTION [ContactsTable];
 END TRY
