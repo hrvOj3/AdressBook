@@ -91,40 +91,40 @@
                     </div>
                     <div class="form-group">
                         <label for="contact-phoneNumber">Phone number:</label>
-                        <input type="text" class="form-control" required id="contact-phoneNumber" placeholder="0995244687">
-                        <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+                        <input type="text" class="form-control" required id="contact-phoneNumber1" placeholder="0995244687">
+                        <input type="checkbox" class="custom-control-input" id="defaultnumber1">
                         <label class="custom-control-label" for="defaultUnchecked">Default phone number</label>
                     </div>
                     <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#moreNumbers">More numbers</button>
                     <div id="moreNumbers" class="collapse">
                         <div class="form-group">
                             <label for="contact-phoneNumber">Phone number:</label>
-                            <input type="text" class="form-control" id="contact-phoneNumber">
-                            <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+                            <input type="text" class="form-control" id="contact-phoneNumber2">
+                            <input type="checkbox" class="custom-control-input" id="defaultnumber2">
                             <label class="custom-control-label" for="defaultUnchecked">Default phone number</label>
                         </div>
                         <div class="form-group">
                             <label for="contact-phoneNumber">Phone number:</label>
-                            <input type="text" class="form-control" id="contact-phoneNumber">
-                            <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+                            <input type="text" class="form-control" id="contact-phoneNumber3">
+                            <input type="checkbox" class="custom-control-input" id="defaultnumber3">
                             <label class="custom-control-label" for="defaultUnchecked">Default phone number</label>
                         </div>
                         <div class="form-group">
                             <label for="contact-phoneNumber">Phone number:</label>
-                            <input type="text" class="form-control" id="contact-phoneNumber">
-                            <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+                            <input type="text" class="form-control" id="contact-phoneNumber4">
+                            <input type="checkbox" class="custom-control-input" id="defaultnumber4">
                             <label class="custom-control-label" for="defaultUnchecked">Default phone number</label>
                         </div>
                         <div class="form-group">
                             <label for="contact-phoneNumber">Phone number:</label>
-                            <input type="text" class="form-control" id="contact-phoneNumber">
-                            <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+                            <input type="text" class="form-control" id="contact-phoneNumber5">
+                            <input type="checkbox" class="custom-control-input" id="defaultnumber5">
                             <label class="custom-control-label" for="defaultUnchecked">Default phone number</label>
                         </div>
                         <div class="form-group">
                             <label for="contact-phoneNumber">Phone number:</label>
-                            <input type="text" class="form-control" id="contact-phoneNumber">
-                            <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+                            <input type="text" class="form-control" id="contact-phoneNumber6">
+                            <input type="checkbox" class="custom-control-input" id="defaultnumber6">
                             <label class="custom-control-label" for="defaultUnchecked">Default phone number</label>
                         </div>
                     </div>
@@ -134,7 +134,10 @@
                     </div>
                     <div class="form-group">
                         <label for="contact-group" class="col-form-label">Group:</label>
-                        <select class="custom-select"></select>
+                        <select class="custom-select">
+                            <option value="Posao">Posao</option>
+                            <option value="Obitelj">Obitelj</option>
+                        </select>
                     </div>
                 </form>
             </div>
@@ -158,6 +161,7 @@
     }
 
     function fromValidation() {
+        var phoneNumbers  new Array(6);
         var tile = document.getElementById("contact-title").value;
         var phoneNumber = document.getElementById("contact-phoneNumber").value;
         if (tile == "" || tile == null) {
