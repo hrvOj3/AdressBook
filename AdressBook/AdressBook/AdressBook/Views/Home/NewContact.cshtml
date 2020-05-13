@@ -1,0 +1,114 @@
+﻿@{
+    ViewBag.Title = "Add New Contact";
+}
+<style>
+    .btn-info {
+        margin: 0px 0px 10px 0px;
+    }
+</style>
+<div class="jumbotron">
+    <h1>Add new contact</h1>
+</div>
+<div>
+    <form>
+        <div class="form-group">
+            <label for="contact-title" class="col-sm-2 col-form-label">Title:</label>
+            <input type="text" required class="form-control" id="title" placeholder="Mark">
+        </div>
+        <div class="form-group">
+            <label for="contact-name" class="col-sm-2 col-form-label">Name:</label>
+            <input type="text" class="form-control" id="contact-name" placeholder="Mark">
+        </div>
+        <div class="form-group">
+            <label for="contact-surname" class="col-sm-2 col-form-label">Surname:</label>
+            <input type="text" class="form-control" id="contact-surname" placeholder="Twain">
+        </div><div class="form-group">
+            <label for="contact-email" class="col-sm-2 col-form-label">Email:</label>
+            <input type="email" class="form-control" id="contact-email" placeholder="email@example.com">
+        </div>
+        <div class="form-group">
+            <label for="contact-phoneNumber" class="col-sm-2 col-form-label">Phone number:</label>
+            <input type="text" class="form-control" id="contact-phoneNumber" placeholder="0995564879">
+            <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+            <label class="custom-control-label" for="defaultUnchecked">Default phone number</label>
+        </div>
+        <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#moreNumbers">More numbers</button>
+        <div id="moreNumbers" class="collapse">
+            <div class="form-group">
+                <label for="contact-phoneNumber" class="col-sm-2 col-form-label">Phone number:</label>
+                <input type="text" class="form-control" required id="contact-phoneNumber">
+                <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+                <label class="custom-control-label" for="defaultUnchecked">Default phone number</label>
+            </div>
+            <div class="form-group">
+                <label for="contact-phoneNumber" class="col-sm-2 col-form-label">Phone number:</label>
+                <input type="text" class="form-control" id="contact-phoneNumber">
+                <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+                <label class="custom-control-label" for="defaultUnchecked">Default phone number</label>
+            </div>
+            <div class="form-group">
+                <label for="contact-phoneNumber" class="col-sm-2 col-form-label">Phone number:</label>
+                <input type="text" class="form-control" id="contact-phoneNumber">
+                <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+                <label class="custom-control-label" for="defaultUnchecked">Default phone number</label>
+            </div>
+            <div class="form-group">
+                <label for="contact-phoneNumber" class="col-sm-2 col-form-label">Phone number:</label>
+                <input type="text" class="form-control" id="contact-phoneNumber">
+                <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+                <label class="custom-control-label" for="defaultUnchecked">Default phone number</label>
+            </div>
+            <div class="form-group">
+                <label for="contact-phoneNumber" class="col-sm-2 col-form-label">Phone number:</label>
+                <input type="text" class="form-control" id="contact-phoneNumber">
+                <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+                <label class="custom-control-label" for="defaultUnchecked">Default phone number</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="contact-organization" class="col-sm-2 col-form-label">Organization:</label>
+            <input type="text" class="form-control" id="contact-organization" placeholder="Microsoft">
+        </div>
+        <div class="form-group">
+            <label for="contact-group" class="col-sm-2 col-form-label">Group:</label>
+            <select class="custom-select"></select>
+        </div>
+    </form>
+    <div>
+        <button type="button" class="btn btn-warning btn-sm" onclick="NavigateToHomePage()">Cancle</button>
+        <button type="submit" class="btn btn-primary btn-sm" onclick="fromValidation()">Save contact</button>
+    </div>
+</div>
+
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Scripts/Controllers/ContactController.js"></script>
+<script type="text/javascript">
+
+    function runWhenReady() {
+        if (window.$)
+            ContactController.getData();
+        else
+            setTimeout(runWhenReady, 100);
+    }
+
+    function NavigateToHomePage() {
+        window.location.href = "/home";
+    }
+
+    function fromValidation() {
+        var tile = document.getElementById("title").value;
+        var phoneNumber = document.getElementById("contact-phoneNumber").value;
+        if (tile == "" || tile == null) {
+            alert("Contact title must me filled");
+        } else if (phoneNumber == "") {
+            alert("Contact must have at least one phone number");
+        }
+        //else {
+        //    ContactController.updateOrInsertContact();
+        //}
+    }
+
+    runWhenReady();
+
+</script>

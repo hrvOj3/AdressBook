@@ -1,0 +1,153 @@
+﻿@{
+    ViewBag.Title = "Group List";
+}
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css" />
+
+<div class="jumbotron">
+    <h1>Contact Group List</h1>
+</div>
+<table id="ContactGroups" class="table table-hover" style="width:100%">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Tiger Nixon</td>
+            <td>System Architect</td>
+        </tr>
+        <tr>
+            <td>Tiger Nixon</td>
+            <td>System Architect</td>
+        </tr>
+        <tr>
+            <td>Tiger Nixon</td>
+            <td>System Architect</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content col-sm-6">
+            <div class="modal-header">
+                <h3 class="modal-title" id="exampleModalLongTitle">Edit contact</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <form>
+                    <div class="form-group">
+                        <label for="contact-title" class="col-form-label">Title:</label>
+                        <input type="text" class="form-control" required id="contact-title" placeholder="Mark">
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-name" class="col-form-label">Name:</label>
+                        <input type="text" class="form-control" id="contact-name" placeholder="Mark">
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-surname" class="col-form-label">Surname:</label>
+                        <input type="text" class="form-control" id="contact-surname" placeholder="Twain">
+                    </div><div class="form-group">
+                        <label for="contact-email" class="col-form-label">Email:</label>
+                        <input type="email" class="form-control" id="contact-email" placeholder="email@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-phoneNumber">Phone number:</label>
+                        <input type="text" class="form-control" required id="contact-phoneNumber" placeholder="0995244687">
+                        <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+                        <label class="custom-control-label" for="defaultUnchecked">Default phone number</label>
+                    </div>
+                    <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#moreNumbers">More numbers</button>
+                    <div id="moreNumbers" class="collapse">
+                        <div class="form-group">
+                            <label for="contact-phoneNumber">Phone number:</label>
+                            <input type="text" class="form-control" id="contact-phoneNumber">
+                            <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+                            <label class="custom-control-label" for="defaultUnchecked">Default phone number</label>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-phoneNumber">Phone number:</label>
+                            <input type="text" class="form-control" id="contact-phoneNumber">
+                            <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+                            <label class="custom-control-label" for="defaultUnchecked">Default phone number</label>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-phoneNumber">Phone number:</label>
+                            <input type="text" class="form-control" id="contact-phoneNumber">
+                            <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+                            <label class="custom-control-label" for="defaultUnchecked">Default phone number</label>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-phoneNumber">Phone number:</label>
+                            <input type="text" class="form-control" id="contact-phoneNumber">
+                            <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+                            <label class="custom-control-label" for="defaultUnchecked">Default phone number</label>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-phoneNumber">Phone number:</label>
+                            <input type="text" class="form-control" id="contact-phoneNumber">
+                            <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+                            <label class="custom-control-label" for="defaultUnchecked">Default phone number</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-organization" class="col-form-label">Organization:</label>
+                        <input type="text" class="form-control" id="contact-organization" placeholder="Microsoft">
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-group" class="col-form-label">Group:</label>
+                        <input type="text" class="form-control" id="contact-group">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-warning btn-sm" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary" onclick="fromValidation()">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+<script src="~/Scripts/Controllers/ContactGroupController.js"></script>
+<script type="text/javascript">
+
+    function runWhenReady() {
+        if (window.$) {
+            //ContactGroupController.getAllContactGroups();
+            genrateGrid();
+        }
+        else
+            setTimeout(runWhenReady, 100);
+    }
+
+    function genrateGrid() {
+        $('#ContactGroups').DataTable();
+        //    data: ContactGroup,
+        //    columns: [
+        //        { title: "Name" },
+        //        { title: "Description" }
+        //    ]
+        //});
+    }
+
+    $('#ContactGroups tbody').on('click', 'tr', function () {
+       // #exampleModalCenter;
+        //var id = this.id;
+        //var index = $.inArray(id, selected);
+
+        //if (index === -1) {
+        //    selected.push(id);
+        //} else {
+        //    selected.splice(index, 1);
+        //}
+
+        //$(this).toggleClass('selected');
+    });
+
+    runWhenReady();
+</script>

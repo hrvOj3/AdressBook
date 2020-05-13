@@ -1,31 +1,174 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Address book";
 }
 
+
 <div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    <h1>Address book</h1>
+    <p class="lead">Last added contacts to address book:</p>
 </div>
 
 <div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+    <div class="col-sm-4">
+        <div class="card">
+            <div class="card-body text-center bg-info text-white" style="padding:10px 5px 10px 5px">
+                <h3 class="card-title ">Pero (title)</h3>
+                <h4 class="card-subtitle mb-2 text-muted ">Dukat d.o.o.(organization)</h4>
+                <p class="card-text">
+                    Name:</br>
+                    Surname:</br>
+                    Phone number:</br>
+                    Email:</br>
+                    Contact group:
+                </p>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                    Edit contact
+                </button>
+            </div>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+    <div class="col-sm-4">
+        <div class="card">
+            <div class="card-body text-center bg-info text-white" style="padding:10px 5px 10px 5px">
+                <h3 class="card-title ">Pero (title)</h3>
+                <h4 class="card-subtitle mb-2 text-muted ">Dukat d.o.o.(organization)</h4>
+                <p class="card-text">
+                    Name:</br>
+                    Surname:</br>
+                    Phone number:</br>
+                    Email:</br>
+                    Contact group:
+                </p>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                    Edit contact
+                </button>
+            </div>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    <div class="col-sm-4">
+        <div class="card">
+            <div class="card-body text-center bg-info text-white" style="padding:10px 5px 10px 5px">
+                <h3 class="card-title ">Pero (title)</h3>
+                <h4 class="card-subtitle mb-2 text-muted ">Dukat d.o.o.(organization)</h4>
+                <p class="card-text">
+                    Name: </br>
+                    Surname:</br>
+                    Phone number:</br>
+                    Email:</br>
+                    Contact group:
+                </p>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                    Edit contact
+                </button>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content col-sm-10">
+            <div class="modal-header">
+                <h3 class="modal-title" id="exampleModalLongTitle">Edit contact</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <form>
+                    <div class="form-group">
+                        <label for="contact-title" class="col-form-label" >Title:</label>
+                        <input type="text" class="form-control" required id="contact-title" placeholder="Mark">
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-name" class="col-form-label">Name:</label>
+                        <input type="text" class="form-control" id="contact-name" placeholder="Mark">
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-surname" class="col-form-label">Surname:</label>
+                        <input type="text" class="form-control" id="contact-surname" placeholder="Twain">
+                    </div><div class="form-group">
+                        <label for="contact-email" class="col-form-label">Email:</label>
+                        <input type="email" class="form-control" id="contact-email" placeholder="email@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-phoneNumber">Phone number:</label>
+                        <input type="text" class="form-control" required id="contact-phoneNumber" placeholder="0995244687">
+                        <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+                        <label class="custom-control-label" for="defaultUnchecked">Default phone number</label>
+                    </div>
+                    <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#moreNumbers">More numbers</button>
+                    <div id="moreNumbers" class="collapse">
+                        <div class="form-group">
+                            <label for="contact-phoneNumber">Phone number:</label>
+                            <input type="text" class="form-control" id="contact-phoneNumber">
+                            <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+                            <label class="custom-control-label" for="defaultUnchecked">Default phone number</label>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-phoneNumber">Phone number:</label>
+                            <input type="text" class="form-control" id="contact-phoneNumber">
+                            <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+                            <label class="custom-control-label" for="defaultUnchecked">Default phone number</label>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-phoneNumber">Phone number:</label>
+                            <input type="text" class="form-control" id="contact-phoneNumber">
+                            <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+                            <label class="custom-control-label" for="defaultUnchecked">Default phone number</label>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-phoneNumber">Phone number:</label>
+                            <input type="text" class="form-control" id="contact-phoneNumber">
+                            <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+                            <label class="custom-control-label" for="defaultUnchecked">Default phone number</label>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-phoneNumber">Phone number:</label>
+                            <input type="text" class="form-control" id="contact-phoneNumber">
+                            <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+                            <label class="custom-control-label" for="defaultUnchecked">Default phone number</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-organization" class="col-form-label">Organization:</label>
+                        <input type="text" class="form-control" id="contact-organization" placeholder="Microsoft">
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-group" class="col-form-label">Group:</label>
+                        <select class="custom-select"></select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-warning btn-sm" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary" onclick="fromValidation()">Save changes</button>
+            </div>
+        </div>
     </div>
 </div>
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Scripts/Controllers/ContactController.js"></script>
+<script type="text/javascript">
+
+    function runWhenReady() {
+        if (window.$)
+            ContactController.getLastAddedContacts();
+        else
+            setTimeout(runWhenReady, 100);
+    }
+
+    function fromValidation() {
+        var tile = document.getElementById("contact-title").value;
+        var phoneNumber = document.getElementById("contact-phoneNumber").value;
+        if (tile == "" || tile == null) {
+            alert("Contact title must me filled");
+        } else if (phoneNumber == "") {
+            alert("Contact must have at least one phone number");
+        }
+        //else {
+        //    ContactController.updateOrInsertContact();
+        //}
+    }
+
+    runWhenReady();
+</script>

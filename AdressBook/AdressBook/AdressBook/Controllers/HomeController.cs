@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿
 using System.Web.Mvc;
 
 namespace AdressBook.Controllers
@@ -13,18 +10,34 @@ namespace AdressBook.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult AllContacts()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "All contacts page.";
 
-            return View();
+            return View("AllContacts");
         }
 
-        public ActionResult Contact()
+        public ActionResult AllGroups()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "All  contact groups page.";
 
-            return View();
+            return View("AllGroups");
         }
+
+        public ActionResult NewContact()
+        {
+            ViewBag.Message = "New contact Page.";
+
+            return View("NewContact");
+        }
+
+        public ActionResult NewGroup()
+        {
+            ViewBag.Message = "New contact group Page.";
+
+            return View("NewGroup");
+        }
+
+        
     }
 }
