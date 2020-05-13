@@ -1,5 +1,4 @@
 ﻿using AdressBook.Models;
-using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
@@ -12,67 +11,64 @@ namespace AdressBook.Controllers
     {
         [HttpGet]
         [Route("allcontacts")]
-        public string GetAllContacts()
+        public IHttpActionResult GetAllContacts()
         {
-            
             IEnumerable<Contact> contacts = Contact.GetAll();
 
-            var serializedContacts = JsonConvert.SerializeObject(contacts);
 
             if (contacts.Count() == 0)
             {
-                return null;
+                return NotFound();
             }
 
-            return serializedContacts;
+            return Ok(contacts);
 
         }
 
-        [HttpPost]
-        [Route("lastcontacts")]
-        public string LastContacts(int numOfContacts)
+        [HttpGet]
+        [Route("lastcontacts/{numofcontacts?}")]
+        public IHttpActionResult LastContacts(int numOfContacts)
         {
             IEnumerable<Contact> contacts = new List<Contact>();
             contacts = Contact.GetLatestContacts(numOfContacts);
 
-            var serializedContacts = JsonConvert.SerializeObject(contacts);
             if (contacts.Count() == 0)
             {
-                return null;
+                return NotFound();
             }
 
-            return serializedContacts;
+            return Ok(contacts);
         }
 
         [HttpPost]
         [Route("savecontact")]
-        public string SaveContact(Contact contact)
+        public IHttpActionResult SaveContact(Contact contact)
         {
             var isSaved = contact.InsertOdUpdateContact(contact);
 
             if (isSaved)
             {
-                return "OK";
+                return Ok();
             }
             else
             {
-                return null;
+                return NotFound();
             }
         }
 
         [HttpPost]
         [Route("deletecontact")]
-        public string DeleteContact(Contact contact)
+        public IHttpActionResult DeleteContact(Contact contact)
         {
             var isDeleted = contact.DelteContact(contact);
 
             if (isDeleted)
             {
-                return "OK"; 
+                return Ok(); 
             }
             else
             {
-                return null;
+                return NotFound();
             }
         }
     }

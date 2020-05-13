@@ -12,7 +12,7 @@
     <div class="col-sm-4">
         <div class="card">
             <div class="card-body text-center bg-info text-white" style="padding:10px 5px 10px 5px">
-                <h3 class="card-title ">Pero (title)</h3>
+                <h3 class="card-title ">Marko</h3>
                 <h4 class="card-subtitle mb-2 text-muted ">Dukat d.o.o.(organization)</h4>
                 <p class="card-text">
                     Name:</br>
@@ -152,7 +152,7 @@
 
     function runWhenReady() {
         if (window.$)
-            ContactController.getLastAddedContacts();
+            ContactController.getLastAddedContacts(3);
         else
             setTimeout(runWhenReady, 100);
     }

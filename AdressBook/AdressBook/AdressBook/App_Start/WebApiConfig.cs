@@ -13,8 +13,8 @@ namespace AdressBook.App_Start
 
             config.Routes.MapHttpRoute(
                name: "contactapi",
-               routeTemplate: "api/{controller}/{id}",
-               defaults: new { id = RouteParameter.Optional }
+               routeTemplate: "api/{controller}/{numofcontacts}",
+               defaults: new { numOfContacts = RouteParameter.Optional }
            );
 
            config.Routes.MapHttpRoute(

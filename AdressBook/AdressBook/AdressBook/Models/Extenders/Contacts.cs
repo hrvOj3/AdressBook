@@ -52,7 +52,7 @@ namespace AdressBook.Models
             try
             {
                 IDatabase db = new Database("myConnectionString");
-                IEnumerable<Contact> contacts = db.Query<Contact>().Where(x => x.Title != null).ToList();
+                IEnumerable<Contact> contacts = (db.Query<Contact>().OrderBy(x => x.Modified_Datetime).ToList()).Take(numOfContacts);
 
                 foreach (Contact contact in contacts)
                 {

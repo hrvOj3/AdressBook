@@ -1,4 +1,5 @@
 ﻿using NPoco;
+using System;
 
 namespace AdressBook.Models
 {
@@ -17,5 +18,7 @@ namespace AdressBook.Models
         public string Organization { get; set; }
 
         public string Email { get; set; }
+
+        public DateTime Modified_Datetime { get; set; }
     }
 }

@@ -97,11 +97,16 @@
     }
 
     function fromValidation() {
-        var tile = document.getElementById("title").value;
-        var phoneNumber = document.getElementById("contact-phoneNumber").value;
-        if (tile == "" || tile == null) {
+        var newContact = new ContactGroupModel();
+        newContact.Title = document.getElementById("title").value;
+        newContact.Surname
+        newContact.Organization
+        newContact.Email
+        newContact.PhoneNumber[0] = document.getElementById("contact-phoneNumber").value;
+
+        if (newContact.tile == "" || newContact.tile == null) {
             alert("Contact title must me filled");
-        } else if (phoneNumber == "") {
+        } else if (newContact.phoneNumber[0] == "") {
             alert("Contact must have at least one phone number");
         }
         //else {

@@ -158,3 +158,4 @@ F:\Git\AdressBook\AdressBook\AdressBook\AdressBook\obj\Debug\AdressBook.csproj.C
 F:\Git\AdressBook\AdressBook\AdressBook\AdressBook\obj\Debug\AdressBook.csproj.CopyComplete
 F:\Git\AdressBook\AdressBook\AdressBook\AdressBook\obj\Debug\AdressBook.dll
 F:\Git\AdressBook\AdressBook\AdressBook\AdressBook\obj\Debug\AdressBook.pdb
+F:\Git\AdressBook\AdressBook\AdressBook\AdressBook\obj\Debug\AdressBook.csprojAssemblyReference.cache

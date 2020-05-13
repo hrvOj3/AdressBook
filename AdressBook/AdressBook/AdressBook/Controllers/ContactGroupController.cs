@@ -13,49 +13,49 @@ namespace AdressBook.Controllers
     {
         [HttpGet]
         [Route("allgroups")]
-        public HttpResponseMessage GetAllGroups()
+        public IHttpActionResult GetAllGroups()
         {
             IEnumerable<ContactGroup> contactGroups = ContactGroup.GetAll();
 
             if (contactGroups.Count() == 0)
             {
-                return Request.CreateResponse(HttpStatusCode.BadRequest); ;
+                return NotFound();
             }
             else
             {
-                return Request.CreateResponse(HttpStatusCode.OK);
+                return Ok(contactGroups);
             }
         }
 
         [HttpPost]
         [Route("savegroup")]
-        public HttpResponseMessage SaveGroup(ContactGroup contactGroup)
+        public IHttpActionResult SaveGroup(ContactGroup contactGroup)
         {
             var isSaved = contactGroup.InsertOrUpdateContactGroup(contactGroup);
 
             if (isSaved)
             {
-                return Request.CreateResponse(HttpStatusCode.OK); ;
+                return Ok(); ;
             }
             else
             {
-                return Request.CreateResponse(HttpStatusCode.BadRequest);
+                return NotFound();
             }
         }
 
         [HttpPost]
         [Route("deletegroup")]
-        public HttpResponseMessage DeleteGroup(ContactGroup contactGroup)
+        public IHttpActionResult DeleteGroup(ContactGroup contactGroup)
         {
             var isDeleted = contactGroup.DeleteContactGroup(contactGroup);
 
             if (isDeleted)
             {
-                return Request.CreateResponse(HttpStatusCode.OK); ;
+                return Ok(); ;
             }
             else
             {
-                return Request.CreateResponse(HttpStatusCode.BadRequest);
+                return NotFound();
             }
         }
     }
