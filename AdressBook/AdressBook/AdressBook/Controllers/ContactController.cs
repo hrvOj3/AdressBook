@@ -1,4 +1,5 @@
 ﻿using AdressBook.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
@@ -13,16 +14,18 @@ namespace AdressBook.Controllers
         [Route("allcontacts")]
         public IHttpActionResult GetAllContacts()
         {
-            IEnumerable<Contact> contacts = Contact.GetAll();
+            IEnumerable<Contact> contacts = new List<Contact>();
 
-
-            if (contacts.Count() == 0)
+            try
             {
-                return NotFound();
+                contacts = Contact.GetAll();
+            }
+            catch (Exception ex)
+            {
+                return InternalServerError(ex);
             }
 
             return Ok(contacts);
-
         }
 
         [HttpGet]
@@ -30,11 +33,14 @@ namespace AdressBook.Controllers
         public IHttpActionResult LastContacts(int numOfContacts)
         {
             IEnumerable<Contact> contacts = new List<Contact>();
-            contacts = Contact.GetLatestContacts(numOfContacts);
 
-            if (contacts.Count() == 0)
+            try
             {
-                return NotFound();
+                contacts = Contact.GetLatestContacts(numOfContacts);
+            }
+            catch (Exception ex)
+            {
+                return InternalServerError(ex);
             }
 
             return Ok(contacts);
@@ -44,32 +50,45 @@ namespace AdressBook.Controllers
         [Route("savecontact")]
         public IHttpActionResult SaveContact(Contact contact)
         {
-            var isSaved = contact.InsertOdUpdateContact(contact);
+            try
+            {
+                foreach (ContactPhoneNumber phoneNumber in contact.PhoneNumbers)
+                {
+                    ContactPhoneNumber.InsertOrUpdatePhoneNumber(phoneNumber);
+                }
 
-            if (isSaved)
-            {
-                return Ok();
+                var isSaved = contact.InsertOdUpdateContact(contact);
             }
-            else
+            catch (Exception ex)
             {
-                return NotFound();
+                return InternalServerError(ex);
             }
+
+            return Ok();
         }
 
         [HttpPost]
         [Route("deletecontact")]
         public IHttpActionResult DeleteContact(Contact contact)
         {
-            var isDeleted = contact.DelteContact(contact);
+            try
+            {
+                List<ContactPhoneNumber> contactPhoneNumbers = ContactPhoneNumber.GetAllByContactId(contact.Id).ToList();
 
-            if (isDeleted)
-            {
-                return Ok(); 
+                foreach (ContactPhoneNumber phoneNumber in contactPhoneNumbers)
+                {
+                    ContactPhoneNumber.DeletePhoneNumber(phoneNumber);
+                }
+
+                var isDeleted = contact.DelteContact(contact);
+                        
             }
-            else
+            catch (Exception ex )
             {
-                return NotFound();
+                return InternalServerError(ex); 
             }
+
+            return Ok();
         }
     }
 }

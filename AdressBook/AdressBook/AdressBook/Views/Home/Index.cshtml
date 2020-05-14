@@ -12,14 +12,18 @@
     <div class="col-sm-4">
         <div class="card">
             <div class="card-body text-center bg-info text-white" style="padding:10px 5px 10px 5px">
-                <h3 class="card-title ">Marko</h3>
-                <h4 class="card-subtitle mb-2 text-muted ">Dukat d.o.o.(organization)</h4>
+                <h3 class="card-title ">Beki</h3>
+                <h4 class="card-subtitle mb-2 text-muted ">Lučica Preluk</h4>
                 <p class="card-text">
-                    Name:</br>
-                    Surname:</br>
-                    Phone number:</br>
-                    Email:</br>
-                    Contact group:
+                    <label>Name:</label>
+                    <p>Bojan</p>
+                    <label>Surname:</label>
+                    <p>Berić</p>
+                    <label>Phone numbers:</label>
+                    <p>091545455555</p>
+                    <label>Email:</label>
+                    <p>beki15@gmail.com</p>
+                    <label>Contact group:</label>
                 </p>
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
                     Edit contact
@@ -30,14 +34,19 @@
     <div class="col-sm-4">
         <div class="card">
             <div class="card-body text-center bg-info text-white" style="padding:10px 5px 10px 5px">
-                <h3 class="card-title ">Pero (title)</h3>
-                <h4 class="card-subtitle mb-2 text-muted ">Dukat d.o.o.(organization)</h4>
+                <h3 class="card-title ">Pero</h3>
+                <h4 class="card-subtitle mb-2 text-muted ">Car moto</h4>
                 <p class="card-text">
-                    Name:</br>
-                    Surname:</br>
-                    Phone number:</br>
-                    Email:</br>
-                    Contact group:
+                    <label>Name:</label>
+                    <p>Pero</p>
+                    <label>Surname:</label>
+                    <p>Perić</p>
+                    <label>Phone numbers:</label>
+                    <p>091548562 </br> 051247852</p>
+                    <label>Email:</label>
+                    <p>pero@gmail.com</p>
+                    <label>Contact group:</label>
+                    <p>Obitelj</p>
                 </p>
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
                     Edit contact
@@ -48,14 +57,19 @@
     <div class="col-sm-4">
         <div class="card">
             <div class="card-body text-center bg-info text-white" style="padding:10px 5px 10px 5px">
-                <h3 class="card-title ">Pero (title)</h3>
-                <h4 class="card-subtitle mb-2 text-muted ">Dukat d.o.o.(organization)</h4>
+                <h3 class="card-title ">Kuma</h3>
+                <h4 class="card-subtitle mb-2 text-muted ">KBC</h4>
                 <p class="card-text">
-                    Name: </br>
-                    Surname:</br>
-                    Phone number:</br>
-                    Email:</br>
-                    Contact group:
+                    <label>Name:</label>
+                    <p>Ana</p>
+                    <label>Surname:</label>
+                    <p>Anić</p>
+                    <label>Phone numbers:</label>
+                    <p>09956878954 </br> 051051051 </br> 09987945123</p>
+                    <label>Email:</label>
+                    <p>ancianci@gmail.com</p>
+                    <label>Contact group:</label>
+                    <p>Obitelj</p>
                 </p>
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
                     Edit contact
@@ -63,7 +77,6 @@
             </div>
         </div>
     </div>
-
 </div>
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -152,16 +165,12 @@
 <script src="~/Scripts/jquery-3.4.1.min.js"></script>
 <script src="~/Scripts/Controllers/ContactController.js"></script>
 <script type="text/javascript">
-
-    function runWhenReady() {
-        if (window.$)
-            ContactController.getLastAddedContacts(3);
-        else
-            setTimeout(runWhenReady, 100);
-    }
+    //function myFunction() {
+    //   $("exampleModalCenter").modal('toggle');
+    //} 
 
     function fromValidation() {
-        var phoneNumbers  new Array(6);
+        //var phoneNumbers  new Array(6);
         var tile = document.getElementById("contact-title").value;
         var phoneNumber = document.getElementById("contact-phoneNumber").value;
         if (tile == "" || tile == null) {
@@ -173,6 +182,4 @@
         //    ContactController.updateOrInsertContact();
         //}
     }
-
-    runWhenReady();
 </script>

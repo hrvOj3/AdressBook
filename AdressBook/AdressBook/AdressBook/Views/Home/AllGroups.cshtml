@@ -112,15 +112,6 @@
 <script src="~/Scripts/Controllers/ContactGroupController.js"></script>
 <script type="text/javascript">
 
-    function runWhenReady() {
-        if (window.$) {
-            //ContactGroupController.getAllContactGroups();
-            genrateGrid();
-        }
-        else
-            setTimeout(runWhenReady, 100);
-    }
-
     function genrateGrid() {
         $('#ContactGroups').DataTable();
         //    data: ContactGroup,
@@ -145,5 +136,5 @@
         //$(this).toggleClass('selected');
     });
 
-    runWhenReady();
+    genrateGrid();
 </script>

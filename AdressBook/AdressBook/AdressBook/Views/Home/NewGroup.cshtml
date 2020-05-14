@@ -2,7 +2,6 @@
     ViewBag.Title = "Add New Group";
 }
 
-
 <div class="jumbotron">
     <h1>Add new contactGroup</h1>
 </div>
@@ -30,13 +29,6 @@
 <script src="~/Scripts/jquery-3.4.1.min.js"></script>
 <script src="~/Scripts/Controllers/ContactGroupController.js"></script>
 <script type="text/javascript">
-
-    function runWhenReady() {
-        if (window.$)
-            ContactGroupController.getData();
-        else
-            setTimeout(runWhenReady, 100);
-    }
 
     function navigateToHomePage() {
         window.location.href = "/home";

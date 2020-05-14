@@ -1,13 +1,11 @@
-﻿
+﻿using AdressBook.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web.Http;
+
 namespace AdressBook.Controllers
 {
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Net;
-    using System.Net.Http;
-    using System.Web.Http;
-    using AdressBook.Models;
-
     [RoutePrefix("api/contactgroupapi")]
     public class ContactGroupController : ApiController
     {
@@ -15,48 +13,49 @@ namespace AdressBook.Controllers
         [Route("allgroups")]
         public IHttpActionResult GetAllGroups()
         {
-            IEnumerable<ContactGroup> contactGroups = ContactGroup.GetAll();
+            IEnumerable<ContactGroup> contactGroups = Enumerable.Empty<ContactGroup>();
+            try
+            {
+                contactGroups = ContactGroup.GetAll();
+            }
+            catch (Exception ex)
+            {
+                return InternalServerError(ex);
+            }
 
-            if (contactGroups.Count() == 0)
-            {
-                return NotFound();
-            }
-            else
-            {
-                return Ok(contactGroups);
-            }
+            return Ok(contactGroups);
         }
 
         [HttpPost]
         [Route("savegroup")]
         public IHttpActionResult SaveGroup(ContactGroup contactGroup)
         {
-            var isSaved = contactGroup.InsertOrUpdateContactGroup(contactGroup);
+            try
+            {
+                var isSaved = contactGroup.InsertOrUpdateContactGroup(contactGroup);               
+            }
+            catch (Exception ex)
+            {
+                return InternalServerError(ex);
+            }
 
-            if (isSaved)
-            {
-                return Ok(); ;
-            }
-            else
-            {
-                return NotFound();
-            }
+            return Ok(); ;
         }
 
         [HttpPost]
         [Route("deletegroup")]
         public IHttpActionResult DeleteGroup(ContactGroup contactGroup)
         {
-            var isDeleted = contactGroup.DeleteContactGroup(contactGroup);
+            try
+            {
+                var isDeleted = contactGroup.DeleteContactGroup(contactGroup);
+            }
+            catch (Exception ex)
+            {
+                return InternalServerError(ex);
+            }
 
-            if (isDeleted)
-            {
-                return Ok(); ;
-            }
-            else
-            {
-                return NotFound();
-            }
+            return Ok();
         }
     }
 }

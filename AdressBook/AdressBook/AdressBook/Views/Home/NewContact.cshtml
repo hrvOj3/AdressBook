@@ -86,14 +86,7 @@
 
 <script src="~/Scripts/jquery-3.4.1.min.js"></script>
 <script src="~/Scripts/Controllers/ContactController.js"></script>
-<script type="text/javascript">
-
-    function runWhenReady() {
-        if (window.$)
-            ContactController.getData();
-        else
-            setTimeout(runWhenReady, 100);
-    }
+<script type="text/javascript">    
 
     function NavigateToHomePage() {
         window.location.href = "/home";
@@ -116,7 +109,5 @@
         //    ContactController.updateOrInsertContact();
         //}
     }
-
-    runWhenReady();
 
 </script>

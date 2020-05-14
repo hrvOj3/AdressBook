@@ -1,6 +1,6 @@
 ﻿using NPoco;
+using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace AdressBook.Models
 {
@@ -15,7 +15,7 @@ namespace AdressBook.Models
                 IEnumerable<ContactPhoneNumber> phoneNumber = db.Query<ContactPhoneNumber>().Where(x => x.Id == id).ToList();
                 return phoneNumber;
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
                 Logger.Error(ex);
                 return null;
@@ -30,7 +30,7 @@ namespace AdressBook.Models
                 IEnumerable<ContactPhoneNumber> numbers = db.Query<ContactPhoneNumber>().Where(x => x.ContactId == contactId).ToList();
                 return numbers;
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
                 Logger.Error(ex);
                 return null;
@@ -52,7 +52,7 @@ namespace AdressBook.Models
                 db.Save(dbPhoneNumber);
                 return true;
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
                 Logger.Error(ex);
                 return false;
@@ -64,13 +64,14 @@ namespace AdressBook.Models
             try
             {
                 IDatabase db = new Database("myConnectionString");
-                int isDeleted;
-                var dbPhoneNumber = db.SingleById<ContactPhoneNumber>(phoneNumber.Id);
-                isDeleted = db.Delete(dbPhoneNumber);
-                return true;
 
+                var dbPhoneNumber = db.SingleById<ContactPhoneNumber>(phoneNumber.Id);
+
+                int isDeleted = db.Delete(dbPhoneNumber);
+
+                return true;
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
                 Logger.Error(ex);
                 return false;
